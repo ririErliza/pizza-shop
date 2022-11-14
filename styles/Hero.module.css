@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    position: relative;
+}
+
+.leftSide{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cherryDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: 3rem;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color:var(--themeRed);
+    font-weight: bold;
+}
