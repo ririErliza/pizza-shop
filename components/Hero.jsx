@@ -38,7 +38,7 @@ const Hero = () => {
         <div className={css.rightSide}>
 
             <div className={css.imageContainer}>
-                <Image src={HeroImage} alt='' layout="responsive" />
+                <Image src={HeroImage} alt='' objectFit='cover' layout="intrinsic" />
             </div>
 
             <div className={css.ContactUs}>
