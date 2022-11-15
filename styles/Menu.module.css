@@ -27,6 +27,7 @@
     position: relative;
     overflow: hidden;
     box-shadow: var(--shadow);
+    cursor: pointer;
     
 }
 
@@ -36,6 +37,7 @@
     row-gap: 2rem;
     align-items: center;
     justify-content: space-around;
+    
 }
 
 .pizza{

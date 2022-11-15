@@ -37,10 +37,14 @@ const Menu = ({pizzas}) => {
                         unoptimized
                       />
                     </div>
+
+                    
                     </Link>
 
                     <span>{pizza.name}</span>
                     <span> {pizza.details}</span>
+
+                    
 
 
                 </div>
