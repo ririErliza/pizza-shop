@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 
 const Menu = ({pizzas}) => {
-    console.log(pizzas)
+    // console.log(pizzas)
   return (
     <div className={css.container}>
 
@@ -16,6 +16,8 @@ const Menu = ({pizzas}) => {
             <span>Make you Fall In Love</span>
 
         </div>
+
+         {/* pizzas */}
 
         <div className={css.menu}>
         {pizzas.map((pizza,id)=>{
@@ -31,7 +33,9 @@ const Menu = ({pizzas}) => {
                         src={src}
                         alt=""
                         objectFit='cover'
-                        layout='fill'/>
+                        layout='fill'
+                        unoptimized
+                      />
                     </div>
                     </Link>
 
@@ -45,7 +49,7 @@ const Menu = ({pizzas}) => {
         )}
             
         </div>
-        {/* pizzas */}
+       
         
     </div>
   )

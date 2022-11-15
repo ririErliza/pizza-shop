@@ -9,8 +9,7 @@
     display: flex;
     flex-direction: column;
     font-weight: bold;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
 }
 
 .heading>:nth-child(1){
@@ -27,8 +26,8 @@
     width: 22rem;
     position: relative;
     overflow: hidden;
-    /* border-radius: 2rem;
-    background: var(--themeRed); */
+    box-shadow: var(--shadow);
+    
 }
 
 .menu{
@@ -53,6 +52,7 @@
     font-weight: bold;
     font-size: 1.3rem;
 }
+
 
 .imageWrapper>span>img:hover{
     transform: scale(1.1);
