@@ -39,6 +39,14 @@
     font-size: 1.6rem;
 }
 
+.sizeVariants{
+    display: flex;
+    gap: 0.6rem;
+    font-weight: normal;
+    color: var(--themeRed);
+    font-size: 0.8rem;
+}
+
 .sizeVariants>div{
     display: flex;
     align-items: center;
@@ -46,4 +54,10 @@
     padding: 0.3rem 1.5rem;
     border: 2px solid var(--themeRed);
     border-radius: 2rem;
+}
+
+.sizeVariants>div:hover{
+    background-color: var(--themeRed);
+    color: white;
+    cursor: pointer;
 }
