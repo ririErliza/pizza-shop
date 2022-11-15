@@ -9,7 +9,7 @@ import css from "../styles/Home.module.css"
 
 export default function Home({pizzas}) {
 
-  console.log(pizzas)
+  // console.log(pizzas)
   return (
     <Layout>
 
