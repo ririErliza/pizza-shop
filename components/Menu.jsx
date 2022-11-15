@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Menu = () => {
+const Menu = ({pizzas}) => {
   return (
     <div>Menu</div>
   )
