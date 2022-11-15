@@ -20,15 +20,28 @@ export default function Pizza({pizza}) {
                     unoptimized
                     />
                 </div>
-            </div>
+            
 
-            {/* right side */}
-            <div className={css.size}>
-                <span>Size</span>
-                <div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                {/* right side */}
+                <div className={css.right}>
+                    <span>{pizza.name}</span>
+                    <span>{pizza.details}</span>
+                    <span><span>$</span>{pizza.price[1]}</span>
+
+                    <div className={css.size}>
+                        <span>Size</span>
+                        <div className={css.sizeVariants}>
+                            <div>Small</div>
+                            <div>Medium</div>
+                            <div>Large</div>
+                        </div>
+                    </div>
+
+                    {/* Quantity counter */}
+                    <div className={css.quantity}>
+                        <span>Quantity</span>
+                    </div>
+
                 </div>
 
             </div>
