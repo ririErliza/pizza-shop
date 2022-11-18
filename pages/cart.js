@@ -1,3 +1,4 @@
+import { TypographyStylesProvider } from "@mantine/core";
 import Image from "next/image";
 import toast, {Toaster} from "react-hot-toast";
 
@@ -15,8 +16,10 @@ export default function Cart() {
     const handleRemove = (i) =>{
         removePizza(i);
         toast.error('Item Removed')
-
     }
+
+    const total = () =>CartData.pizzas.reduce((a,b)=>a+b.quantity*b.price,0)
+
 
 
     return(
@@ -103,9 +106,22 @@ export default function Cart() {
                     <span>Cart</span>
                     <div className={css.cartDetails}>
                         <div>
-                            <span></span>
-                            <span></span>
+                            <span>Items</span>
+                            <span>{CartData.pizzas.length}</span>
                         </div>
+
+                        <div>
+                            <span>Total</span>
+                            <span>$ {total()}</span>
+                        </div>
+
+                        
+                    </div>
+
+                    <div className={css.buttons}>
+                            <button className="btn">Pay on Delivery</button>
+                            <button className="btn">Pay now</button>
+
                     </div>
 
                 </div>
