@@ -2,11 +2,17 @@
 import Image from "next/image";
 import Layout from "../../components/Layout";
 import { client, urlFor } from "../../lib/client";
-import css from "../../styles/Pizza.module.css"
+import css from "../../styles/Pizza.module.css";
+import LeftArrow from "../../assets/arrowLeft.png";
+import RightArrow from "../../assets/arrowRight.png"
+import { useState } from "react";
 
 export default function Pizza({pizza}) {
     // console.log(pizza)
     const src = urlFor(pizza.image).url()
+
+    const[size,setSize]=useState(1)
+
     return(
         <Layout>
             <div className={css.container}>
@@ -26,7 +32,7 @@ export default function Pizza({pizza}) {
                 <div className={css.right}>
                     <span>{pizza.name}</span>
                     <span>{pizza.details}</span>
-                    <span><span>$</span>{pizza.price[1]}</span>
+                    <span><span style={{color:"var(--themeRed)"}}>$</span>{pizza.price[1]}</span>
 
                     <div className={css.size}>
                         <span>Size</span>
@@ -40,9 +46,24 @@ export default function Pizza({pizza}) {
                     {/* Quantity counter */}
                     <div className={css.quantity}>
                         <span>Quantity</span>
+                        
+                        <div className={css.counter}>
+                        
+                        <Image src={LeftArrow} alt='' objectFit='contain' height={20} width={20} />
+                        <span>1</span>
+                        <Image src={RightArrow} alt='' objectFit='contain' height={20} width={20} />
+                        </div>
+
                     </div>
 
+                    {/* Button */}
+                <div className={`btn ${css.btn}`}>
+                    Add to Cart
                 </div>
+
+                </div>
+
+                
 
             </div>
 

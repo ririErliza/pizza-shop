@@ -1,19 +1,22 @@
 .container{
     display: flex;
     padding: 2rem;
-    gap: 5rem;
+    gap: 6rem;
     margin-top: 3rem;
+    justify-content: center;
+    
 }
 
 .imageWrapper{
     position: relative;
-    width: 40%;
-    height: 25rem;
+    width: 50%;
+    height: 30rem;
     overflow: hidden;
     box-shadow: var(--shadow);
+    
 }
 
-.imageWrapper>span>img{
+.imageWrapper>span>img:hover{
     transform: scale(1.1);
 }
 
@@ -60,4 +63,22 @@
     background-color: var(--themeRed);
     color: white;
     cursor: pointer;
+}
+
+.quantity{
+    display: flex;
+    font-size: 1.6rem;
+    font-weight: 600;
+    gap:3rem
+}
+
+.counter{
+    display: flex;
+    gap: 1rem;
+}
+
+.btn{
+    font-weight: normal;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
 }
