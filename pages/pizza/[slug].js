@@ -13,6 +13,17 @@ export default function Pizza({pizza}) {
 
     const[size,setSize]=useState(1)
 
+    const[quantity,setQuantity]=useState(1)
+
+    const handleQuantity = (type) =>{
+        type==='increment'?
+        setQuantity((prev)=>prev+1):
+        quantity===1?
+        null:
+        setQuantity((prev)=>prev-1)
+
+    }
+
     return(
         <Layout>
             <div className={css.container}>
@@ -32,14 +43,19 @@ export default function Pizza({pizza}) {
                 <div className={css.right}>
                     <span>{pizza.name}</span>
                     <span>{pizza.details}</span>
-                    <span><span style={{color:"var(--themeRed)"}}>$</span>{pizza.price[1]}</span>
+                    <span><span style={{color:"var(--themeRed)"}}>$</span>{pizza.price[size]}</span>
 
                     <div className={css.size}>
                         <span>Size</span>
                         <div className={css.sizeVariants}>
-                            <div>Small</div>
-                            <div>Medium</div>
-                            <div>Large</div>
+                            <div onClick={()=>setSize(0)} 
+                            className={size===0?css.selected:""}>Small</div>
+
+                            <div onClick={()=>setSize(1)}
+                            className={size===1?css.selected:""}>Medium</div>
+
+                            <div onClick={()=>setSize(2)}
+                            className={size===2?css.selected:""}>Large</div>
                         </div>
                     </div>
 
@@ -49,9 +65,16 @@ export default function Pizza({pizza}) {
                         
                         <div className={css.counter}>
                         
-                        <Image src={LeftArrow} alt='' objectFit='contain' height={20} width={20} />
-                        <span>1</span>
-                        <Image src={RightArrow} alt='' objectFit='contain' height={20} width={20} />
+                        <Image src={LeftArrow} alt='' 
+                        objectFit='contain' 
+                        height={20} width={20}
+                        onClick={()=>handleQuantity("decrement")}
+                         />
+                        <span>{quantity}</span>
+                        <Image src={RightArrow} alt='' 
+                        objectFit='contain' 
+                        height={20} width={20} 
+                        onClick={()=>handleQuantity("increment")}/>
                         </div>
 
                     </div>
