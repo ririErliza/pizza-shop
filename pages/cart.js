@@ -1,4 +1,5 @@
 import Image from "next/image";
+import toast, {Toaster} from "react-hot-toast";
 
 import Layout from "../components/Layout";
 import { urlFor } from "../lib/client";
@@ -9,8 +10,12 @@ import css from "../styles/Cart.module.css"
 export default function Cart() {
     const CartData = useStore((state)=>state.cart)
 
+    const removePizza = useStore((state)=>state.removePizza)
+
     const handleRemove = (i) =>{
-        
+        removePizza(i);
+        toast.error('Item Removed')
+
     }
 
 
@@ -89,9 +94,25 @@ export default function Cart() {
 
                     </table>
                 </div>
-                <div className={css.cart}></div>
+                
+
+            
+
+                {/* summary */}
+                <div className={css.cart}>
+                    <span>Cart</span>
+                    <div className={css.cartDetails}>
+                        <div>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
+
+            <Toaster/>
 
         </Layout>
     )
