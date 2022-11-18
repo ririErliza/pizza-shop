@@ -8,6 +8,12 @@ import css from "../styles/Cart.module.css"
 
 export default function Cart() {
     const CartData = useStore((state)=>state.cart)
+
+    const handleRemove = (i) =>{
+        
+    }
+
+
     return(
         <Layout>
 
@@ -32,11 +38,10 @@ export default function Cart() {
 
                                 return(
                                 <tr key={i}>
-                                    <td>
+                                    <td className={css.imageTd}>
                                         <Image
                                         loader={()=>src}
                                         src={src}
-                                        className={css.imageTd}
                                         alt=''
                                         objectFit="cover"
                                         width={85}
@@ -68,6 +73,13 @@ export default function Cart() {
 
                                     <td>
                                         {pizza.price * pizza.quantity}
+                                    </td>
+
+                                    <td style={{color:"var(--themeRed)",
+                                                cursor:"pointer",
+                                                fontWeight:"bold" }} 
+                                    onClick={()=>handleRemove(i)}>
+                                        x
                                     </td>
 
                                 </tr>
