@@ -6,6 +6,7 @@ import css from "../../styles/Pizza.module.css";
 import LeftArrow from "../../assets/arrowLeft.png";
 import RightArrow from "../../assets/arrowRight.png"
 import { useState } from "react";
+import { useStore } from "../../store/store";
 
 export default function Pizza({pizza}) {
     // console.log(pizza)
@@ -22,6 +23,14 @@ export default function Pizza({pizza}) {
         null:
         setQuantity((prev)=>prev-1)
 
+    }
+
+    //add to cart function
+
+    const addPizza = useStore((state)=>state.addPizza)
+    const addToCart=()=>{
+        addPizza({...pizza, price: pizza.price[size], quantity, size: size})
+        console.log('pizza added')
     }
 
     return(
@@ -80,7 +89,8 @@ export default function Pizza({pizza}) {
                     </div>
 
                     {/* Button */}
-                <div className={`btn ${css.btn}`}>
+                <div className={`btn ${css.btn}`}
+                onClick={addToCart}>
                     Add to Cart
                 </div>
 
