@@ -17,6 +17,8 @@ const OrderModal = ({opened, setOpened,PaymentMethod}) => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
+        // console.log(FormData);
+
         const id = await createOrder({...FormData, total, PaymentMethod})
         console.log('Order placed ', id)
     }
