@@ -25,7 +25,7 @@ export default function Cart() {
 
     const handleOnDelivery = () =>{
         setPaymentMethod(0);
-        typeof window !== 'undefinded' && localStorage.setItem('total',total())
+        typeof window !== 'undefined' && localStorage.setItem('total',total())
     }
 
     return(
@@ -60,6 +60,7 @@ export default function Cart() {
                                         objectFit="cover"
                                         width={85}
                                         height={85}
+                                        unoptimized
                                         />
                                     </td>
 
@@ -138,7 +139,7 @@ export default function Cart() {
 
             {/* Modal */}
             <OrderModal
-            opened = {PaymentMethod===0}
+            opened = {PaymentMethod === 0}
             setOpened = {setPaymentMethod}
             PaymentMethod = {PaymentMethod}
             />
