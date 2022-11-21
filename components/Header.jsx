@@ -4,12 +4,19 @@ import Logo from '../assets/Logo.png'
 import {UilShoppingBag} from '@iconscout/react-unicons'
 import {useStore} from '../store/store'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 const Header = () => {
 
   //state in terminal
   // const state = useStore((state)=>state)
   // console.log(state)
+
+  const[order, setOrder]= useState("")
+
+  useEffect(()=>{
+    setOrder(localStorage.getItem("order"));
+  },[])
 
   // item in cart
   const items = useStore((state)=>state.cart.pizzas.length)
