@@ -20,7 +20,7 @@ const OrderModal = ({opened, setOpened,PaymentMethod}) => {
 
     const resetCart = useStore((state)=>state.resetCart)
 
-    const total = typeof window !== 'undefined' && localStorage.getItem('total')
+    const total = typeof window !== "undefined" && localStorage.getItem('total')
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -31,7 +31,7 @@ const OrderModal = ({opened, setOpened,PaymentMethod}) => {
         toast.success("Order placed");
         resetCart();
         {
-            typeof window !== 'undefined' && localStorage.setItem('order', id)
+            typeof window !== "undefined" && localStorage.setItem('order', id)
         }
 
         router.push(`/order/${id}`)

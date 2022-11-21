@@ -3,7 +3,7 @@ import Layout from '../../components/Layout'
 import css from '../../styles/Order.module.css'
 
 export const getServerSideProps = async({params})=>{
-    const query =`*{_type =='order' && _id =='${params.id}'}`;
+    const query =`*[_type =='order' && _id =='${params.id}']`;
     const order = await client.fetch(query);
 
     return{
@@ -11,7 +11,7 @@ export const getServerSideProps = async({params})=>{
             order: order[0]
         }
     }
-}
+};
 
 export default function Orders({order}) {
     return(
