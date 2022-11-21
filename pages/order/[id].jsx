@@ -24,7 +24,7 @@ export default function Orders({order}) {
         if(order.status>3){
             localStorage.clear()
         }
-    })
+    },[order])
 
 
     return(
