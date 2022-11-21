@@ -31,7 +31,7 @@ const OrderModal = ({opened, setOpened,PaymentMethod}) => {
         toast.success("Order placed");
         resetCart();
         {
-            typeof window !== 'undefined' && localStorage.getItem('order', id)
+            typeof window !== 'undefined' && localStorage.setItem('order', id)
         }
 
         router.push(`/order/${id}`)
