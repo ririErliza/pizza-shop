@@ -1,5 +1,6 @@
 import { Modal, useMantineTheme } from "@mantine/core"
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { createOrder } from "../lib/orderHandler";
 import css from '../styles/OrderModal.module.css'
 
@@ -20,7 +21,9 @@ const OrderModal = ({opened, setOpened,PaymentMethod}) => {
         // console.log(FormData);
 
         const id = await createOrder({...FormData, total, PaymentMethod})
-        console.log('Order placed ', id)
+        //console.log('Order placed ', id)
+        toast.success("Order placed");
+        
     }
 
   return (
