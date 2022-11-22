@@ -14,6 +14,9 @@ export default function Cart() {
     const CartData = useStore((state)=>state.cart)
     const removePizza = useStore((state)=>state.removePizza)
     const [PaymentMethod,setPaymentMethod] = useState(null)
+    const [order, setOrder] = useState(
+        typeof window !== 'undefined' && localStorage.getItem('order')
+    )
 
     const handleRemove = (i) =>{
         removePizza(i);
@@ -124,12 +127,16 @@ export default function Cart() {
 
                         
                     </div>
+                    
+                    {!order && CartData.pizzas.length > 0 ? (
+                        <div className={css.buttons}>
+                        <button className="btn" onClick={handleOnDelivery}>Pay on Delivery</button>
+                        <button className="btn">Pay now</button>
 
-                    <div className={css.buttons}>
-                            <button className="btn" onClick={handleOnDelivery}>Pay on Delivery</button>
-                            <button className="btn">Pay now</button>
+                </div>
 
-                    </div>
+                    ) : null}
+                    
 
                 </div>
 
